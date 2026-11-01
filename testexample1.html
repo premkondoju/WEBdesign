@@ -1,0 +1,50 @@
+<!DOCTYPE  html>
+<html>
+    <head>
+        <style>
+            h1 {
+                font-size: 30px;
+                color: rgb(137, 207, 26);
+            }
+            .info {
+                font-size: 20px;
+                color: rgb(8, 143, 116);
+            }
+            p2 {
+                font-size: 15px;
+                color: rgb(10, 49, 106);
+            }
+            #username, #password, #email {
+                width: 200px;
+                padding: 5px;
+                margin-bottom: 10px;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="http://127.0.0.1:5500/divtest.html" method="post">
+        <h1>Welcome to XploreOne</h1>
+        <p1 class="info">Enter Your Credentials below</p1><br>
+        <p3 class="info">This interface allows you to enter your account details</p3><br>
+        <p2 style="border: 1px solid black;">*Make sure to enter your details correctly</p2><br><br>
+        <label>
+            Username:
+            <input type="text" id="username" name="username">
+        </label><br>
+        <label>
+            Password:
+            <input type="password" id="password" name="password">  
+        </label><br>
+        <label>
+            Email:
+            <input type="email" id="email" name="email">
+        </label><br>
+        <label>
+            <input type="checkbox" id="newsletter" name="newsletter">
+            <label for="newsletter">I agree to the terms and conditions</label>
+        </label><br>
+        <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

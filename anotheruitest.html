@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with Multi-Option Selection Bar</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #2f3d41;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* The Main Login Popup Card Container */
+        .login-popup {
+            background: #444343;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            width: 1000px;
+            height: 530px;
+            margin-top: 50vh;
+        }
+
+        /* --- THE SELECTION BAR (Segmented Control) --- */
+        .selection-bar {
+            display: flex;
+            background: #484a4c;
+            padding: 6px;
+            gap: 4px;
+            border-bottom: 1px solid #272828;
+        }
+
+        .option-tab {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 12px 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #64748b;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.2s ease-in-out;
+            text-align: center;
+        }
+
+        /* Hover and Active Visual States */
+        .option-tab:hover {
+            color: #1e293b;
+            background: rgba(0,0,0,0.02);
+        }
+
+        .option-tab.active {
+            background: #525151;
+            color: #2563eb;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+        }
+
+        /* --- LOGIN BODY CONTENT --- */
+        .login-body {
+            padding: 30px;
+            position: center;
+            text-align: center; 
+        }
+
+        .form-title {
+            font-size: 22px;
+            color: #1e293b;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .form-subtitle {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 6px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+
+        .submit-btn:hover {
+            background: #1d4ed8;
+        }
+
+        /* Context-aware indicator inside form fields */
+        .context-hint {
+            display: inline-block;
+            font-style: normal;
+            color: #f2f3f4;
+        }
+        .header-box {
+                width: 30vw;
+                height: 25vh;
+                position: relative;
+                top: 0;
+                left: 0;
+                right: 0;
+                position: fixed;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <div class="website">
+        <div class="header-box">
+            <div class="menu">
+                <img src="menuicon.png" alt="" style=" width: 35px ; height: 35px; margin-top: 50px; margin-left: 20px;">
+            </div>
+            <div class="logo">
+            <img src="xploreonelogo.png" alt="Logo" width="200" height="100" style="border-radius: 50%; margin-left: 10px; margin-top: 20px; margin-bottom: 20px;"><br>
+            </div>
+        </div><br>
+
+        <div class="login-popup">
+            <!-- The Top Selection Bar Container -->
+            <div class="selection-bar" id="selectionBar">
+                <button class="option-tab active" data-target="Personal" style="color: #ffffff;">Personal</button>
+                <button class="option-tab" data-target="Business" style="color: #ffffff;">Business</button>
+                <button class="option-tab" data-target="Admin" style="color: #ffffff;">Admin Portal</button>
+            </div>
+
+            <!-- The Contextual Form Interface Body -->
+            <div class="login-body">
+                <h2 class="form-title" id="formTitle" style="color: #ffffff;">Welcome Back!</h2>
+                <img src="xploreonelogo.png" alt="Logo" width="200" height="100" style="border-radius: 50%; margin-bottom: 5px;;"><br>
+                <p class="form-subtitle" id="formSubtitle" style="color: #ffffff;">Please sign in to your personal dashboard.</p>
+
+                <form id="loginForm" onsubmit="event.preventDefault();alert('Logging in context: ' + activeContext)" action="http://127.0.0.1:5500/example2.html" method="post">
+                    <div class="form-group">
+                        <label for="username" style="color: #ffffff;">Username / Email</label>
+                        <input type="text" id="username" placeholder="yourname@gmail.com / Username" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password" style="color: #ffffff;">Password</label>
+                        <input type="password" id="password" placeholder="Your Password" required>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn";>
+                        Login as <span id="btnContext" class="context-hint">Personal</span>
+                    </button>
+                </form>
+            </div>
+        </div><br><br>
+        <div class="box" style="top: 50px; bottom: 0; height: 10vh; text-align: center; line-height: 10vh; color: #ffffff;">
+            <p style="margin: 0;">&copy; 2026 XploreOne. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        // Track the actively chosen configuration choice
+        let activeContext = 'Personal';
+
+        const tabs = document.querySelectorAll('.option-tab');
+        const formTitle = document.getElementById('formTitle');
+        const formSubtitle = document.getElementById('formSubtitle');
+        const btnContext = document.getElementById('btnContext');
+        const usernameInput = document.getElementById('username');
+
+        // Dynamically update UI context rules when clicking selection options
+        tabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                // Remove active status class from old options
+                tabs.forEach(t => t.classList.remove('active'));
+                
+                // Set current item active
+                tab.classList.add('active');
+                
+                activeContext = tab.getAttribute('data-target');
+                
+                // Dynamically update UI microcopy depending on selection context
+                if(activeContext === 'Personal') {
+                    formTitle.textContent = "Welcome Back!";
+                    formSubtitle.textContent = "Please sign in to your personal dashboard.";
+                    usernameInput.placeholder = "yourname@example.com";
+                } else if(activeContext === 'Business') {
+                    formTitle.textContent = "Enterprise Access";
+                    formSubtitle.textContent = "Sign in using your corporate team identity.";
+                    usernameInput.placeholder = "corp\\username";
+                } else if(activeContext === 'Admin') {
+                    formTitle.textContent = "Management Terminal";
+                    formSubtitle.textContent = "Elevated credentials security clearance required.";
+                    usernameInput.placeholder = "admin-id";
+                }
+                
+                btnContext.textContent = activeContext;
+            });
+        });
+    </script>
+</body>
+</html>

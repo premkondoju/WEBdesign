@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    background-color: #080D18;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #0D1626;
+}
+
+.card {
+    background-color: #111D30;
+    border: 1px solid #263750;
+}
+
+.button {
+    background-color: #00D9FF;
+    color: #080D18;
+}
+
+.button:hover {
+    background-color: #22E6FF;
+}
+
+.secondary-text {
+    color: #AAB7C8;
+}

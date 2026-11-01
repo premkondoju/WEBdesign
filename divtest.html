@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="divtest2.css">
+        <link rel="stylesheet" href="anotheruitest.html">
+        <style>
+            .box1 {
+                width: 450px;
+                height: 500px;
+                border-radius: 50px;
+                padding: 10px;
+                margin: auto;
+                position: auto;
+                z-index: 2;
+                background-color: rgba(41, 36, 47, 0.918);
+                text-align: center;
+                align-items:center;
+                display: flex;
+                flex-direction: column;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: calc(50vh - 142px);
+                margin-bottom: calc(50vh - 142px);
+            }
+            .website {
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-size: cover;
+                z-index: 1;
+                background-position: center;
+                background-color: rgba(0, 0, 0, 0.5);
+
+            }
+            .box3 {
+                width: 100vw;
+                height: 25vh;
+                background-color: rgba(0, 0, 0, 0.5);
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                position: fixed;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+            .box3 .logo {
+                width: 16vw;
+                height: 25vh;
+                border: 2px solid white;
+            }
+            .box3 .menu{
+                width: 5vw;
+                height: 25vh;
+                border: 2px solid white;
+                display: flex;
+            }
+            .box3 .sub-box {
+                width: 25vw;
+                height: 25vh;
+                border: 2px solid white;
+                display: flex;
+            }
+            .box3 .head-text {
+                width: 50vw;
+                height: 25vh;
+                border: 2px solid white;
+                display: flex;
+                font-style: italic;
+
+            }
+            .selection-bar {
+            display: flex;
+            background: #f1f5f9;
+            padding: 6px;
+            gap: 4px;
+            border-bottom: 1px solid #e2e8f0;
+            border: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box website">
+            <div class="navbar">
+
+
+            </div>
+            <div class="card">
+
+            </div>
+            <div class="box3">
+                <div class="menu">
+                    <img src="menuicon.png" alt="" style=" width: 40px ; height: 40px; margin-top: 50px; margin-left: 10px;">
+                </div>
+                <div class="logo">
+                <img src="xploreonelogo.png" alt="" style="width: 200px; height: 100px; margin-left: 1px; margin-top: 20px; margin-bottom: 20px; border-radius: 50%;">
+                </div>
+                <div class="head-text">
+                    <h1 style=" margin-left: 140px; margin-top: 50px; text-decoration-style: double;">WELCOME TO XPLOREONE</h1>
+                </div>
+                <div class="sub-box">
+
+                </div>
+
+                <div>
+
+                </div>
+            </div>
+            <div class="box1">
+                <div class="Selection-bar" id="selectionBar">
+                    <button class="option-tab active" data-target="Personal">Personal</button>
+                    <button class="option-tab" data-target="Admin">Admin Portal</button>
+                </div>
+                <form action="http://127.0.0.1:5500/example2.html" method="post">
+                <h1 style=" margin-bottom: 0px;">Create Account</h1>
+                <img src="xploreonelogo.png" alt="Picture" width="200" height="100" style="border-radius: 50%; margin-bottom: 5px;"><br>
+                <label for="name">
+                    Name:
+                    <input type="text" id="name" name="" style=" border-radius: 8px; padding: 5px; width: 200px;">
+                </label><br><br>
+                <label for="username">
+                    Username:
+                    <input type="text" id="username" name="username" style=" border-radius: 8px; padding: 5px; width: 200px;">
+                </label><br><br>
+                <label for="password">
+                    Password:
+                    <input type="password" id="password" name="password" style=" border-radius: 5px; padding: 5px; width: 200px;">
+                </label><br><br>
+                <label for="confirm password">
+                    Confirm:
+                    <input type="confirm password" id="password" name="password" style=" border-radius: 5px; padding: 5px"; width: 200px>
+                </label><br><br>
+                <label>
+                    <input type="checkbox" id="remember" name="remember">
+                    Remember me
+                </label><br><br>
+                <input type="submit" value="Create" style="width: 100px; height: 30px">
+            </div>
+            <div class="box" style="top: auto; bottom: 0; height: 10vh; text-align: center; line-height: 10vh;">
+                <p style="margin: 0;">&copy; 2026 XploreOne. All rights reserved.</p>
+        </div>
+    </body>
+</html>
